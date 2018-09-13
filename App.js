@@ -3,7 +3,6 @@ import { StyleSheet, View } from "react-native";
 import { createStackNavigator } from "react-navigation";
 
 import PokeList from "./components/PokeList";
-import Header from "./components/Header";
 import LandingScreen from "./components/LandingScreen";
 
 const RootStack = createStackNavigator(
@@ -18,7 +17,6 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <Header /> */}
         <RootStack />
       </View>
     );

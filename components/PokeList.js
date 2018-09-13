@@ -1,10 +1,15 @@
 import React from "react";
-import { ScrollView, StyleSheet, Button, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import PokeCard from "./PokeCard";
 import pokemonList from "../assets/pokemon_1-150.json";
 
-class PokeList extends React.Component {
+export default class PokeList extends React.Component {
   state = { pokemonList };
+
+  static navigationOptions = {
+    title: "Pokedex"
+  };
+
   render() {
     return (
       <ScrollView>
@@ -27,5 +32,3 @@ const styles = StyleSheet.create({
     paddingBottom: 75
   }
 });
-
-export default PokeList;
