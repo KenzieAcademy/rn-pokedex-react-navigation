@@ -20,7 +20,9 @@ export default class PokeList extends React.Component {
               <PokeCard
                 key={pokemon.id}
                 pokemon={pokemon}
-                handlePress={() => this.props.navigation.navigate("PokeModal")}
+                handlePress={() =>
+                  this.props.navigation.navigate("PokeModal", { pokemon })
+                }
               />
             ))}
           </View>
