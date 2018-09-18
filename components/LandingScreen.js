@@ -1,6 +1,8 @@
 import React from "react";
 import { Text, View, Button, StyleSheet, Image } from "react-native";
 
+import CommonBackground from "./CommonBackground";
+
 export default class LandingScreen extends React.Component {
   static navigationOptions = {
     title: "Home"
@@ -11,17 +13,22 @@ export default class LandingScreen extends React.Component {
     const { navigation } = this.props;
 
     return (
-      <View style={containerStyle}>
-        <Text style={titleStyle}>
-          Welcome to the Wonderful World of Pokemon!
-        </Text>
-        <Image source={require("../assets/pokeball.png")} style={imageStyle} />
-        <Button
-          style={buttonStyle}
-          title="Explore"
-          onPress={() => navigation.navigate("List")}
-        />
-      </View>
+      <CommonBackground>
+        <View style={containerStyle}>
+          <Text style={titleStyle}>
+            Welcome to the Wonderful World of Pokemon!
+          </Text>
+          <Image
+            source={require("../assets/pokeball.png")}
+            style={imageStyle}
+          />
+          <Button
+            style={buttonStyle}
+            title="Explore"
+            onPress={() => navigation.navigate("List")}
+          />
+        </View>
+      </CommonBackground>
     );
   }
 }

@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
     margin: 5,
     padding: 5,
     borderWidth: 1,
-    borderRadius: 5
+    borderRadius: 5,
+    backgroundColor: "#fff"
   },
   textStyle: {
     fontSize: 15
