@@ -1,18 +1,19 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, Button } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 const PokeCard = ({ pokemon, handlePress }) => {
   const { cardStyle, textStyle } = styles;
   return (
-    <View style={cardStyle}>
-      <Text style={textStyle}>#{pokemon.id}</Text>
-      <Text style={textStyle}>{pokemon.name}</Text>
-      <Image
-        source={{ uri: pokemon.sprites.front_default }}
-        style={{ width: 50, height: 50, alignSelf: "center" }}
-      />
-      <Button title="open" onPress={handlePress} />
-    </View>
+    <TouchableOpacity onPress={handlePress} underlayColor="white">
+      <View style={cardStyle}>
+        <Text style={textStyle}>#{pokemon.id}</Text>
+        <Text style={textStyle}>{pokemon.name}</Text>
+        <Image
+          source={{ uri: pokemon.sprites.front_default }}
+          style={{ width: 50, height: 50, alignSelf: "center" }}
+        />
+      </View>
+    </TouchableOpacity>
   );
 };
 
