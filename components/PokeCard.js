@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Button } from "react-native";
 
-const PokeCard = ({ pokemon }) => {
+const PokeCard = ({ pokemon, handlePress }) => {
   const { cardStyle, textStyle } = styles;
   return (
     <View style={cardStyle}>
@@ -11,6 +11,7 @@ const PokeCard = ({ pokemon }) => {
         source={{ uri: pokemon.sprites.front_default }}
         style={{ width: 50, height: 50, alignSelf: "center" }}
       />
+      <Button title="open" onPress={handlePress} />
     </View>
   );
 };

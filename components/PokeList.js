@@ -15,7 +15,11 @@ export default class PokeList extends React.Component {
       <ScrollView>
         <View style={styles.containerStyle}>
           {this.state.pokemonList.map(pokemon => (
-            <PokeCard key={pokemon.id} pokemon={pokemon} />
+            <PokeCard
+              key={pokemon.id}
+              pokemon={pokemon}
+              handlePress={() => this.props.navigation.navigate("PokeModal")}
+            />
           ))}
         </View>
       </ScrollView>

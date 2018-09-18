@@ -4,13 +4,29 @@ import { createStackNavigator } from "react-navigation";
 
 import PokeList from "./components/PokeList";
 import LandingScreen from "./components/LandingScreen";
+import PokeModal from "./components/PokeModal";
 
-const RootStack = createStackNavigator(
+const MainStack = createStackNavigator(
   {
     Home: LandingScreen,
     List: PokeList
   },
   { initialRouteName: "Home" }
+);
+
+const RootStack = createStackNavigator(
+  {
+    Main: {
+      screen: MainStack
+    },
+    PokeModal: {
+      screen: PokeModal
+    }
+  },
+  {
+    mode: "modal",
+    headerMode: "none"
+  }
 );
 
 export default class App extends React.Component {
